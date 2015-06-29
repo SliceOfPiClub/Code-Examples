@@ -8,10 +8,10 @@
 # Created: 29-June-2015
 # ==========================================
 #
-Import sqlite3 as lite
-Import sys
+import sqlite3 as lite
+import sys
 
-Try:
+try:
 	#
 	# create a connection to the database
 	#
@@ -53,4 +53,3 @@ finally:
 	#
 	if con:
 		con.close()
-
