@@ -15,7 +15,7 @@ Try:
 	#
 	# create a connection to the database
 	#
-	con = lite.connect(‘TemperatureReaddings.db’)
+	con = lite.connect('TemperatureReaddings.db')
 
 	#
 	# create a cursor to all data to be fetched from the database
@@ -25,7 +25,7 @@ Try:
 	#
 	# Execute the select command 
 	#
-	cur.execute(‘Select * from Temperature’);
+	cur.execute('Select * from Temperature');
 
 	#
 	# Fetch all the records from the Temperature table
