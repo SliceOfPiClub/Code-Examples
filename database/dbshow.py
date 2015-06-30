@@ -20,31 +20,32 @@ try:
 	#
 	# create a cursor to all data to be fetched from the database
 	#
-	cur = con.cusrsor()
+	cur = con.cursor()
 	
 	#
 	# Execute the select command 
 	#
-	cur.execute('Select * from Temperature');
+	cur.execute('Select * from Temperature order by date');
 
 	#
 	# Fetch all the records from the Temperature table
 	#
 	rows= cur.fetchall()
 
+	
 	#
 	# loop through each record and print it
 	#
 	for row in rows:
-        	print "%s %s %s %s" % (row["Id"], row["Device"], row["Date"], row["Value"])
+        	print "%s %s %s %s" % (row[0], row[1], row[2], row[3])
 
 
-except lite.Error,e
+except lite.DatabaseError,e:
 	#
 	# the program only comes here if an error occurs
 	# display the error and quit
 	#
-	print "error %s:",% e.args[0]
+	print "error %s:" % e.args[0]
 	sys.exit(1)
 
 finally:

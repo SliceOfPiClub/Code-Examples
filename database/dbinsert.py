@@ -20,7 +20,7 @@ try:
 	#
 	# create a cursor to all data to be fetched from the database
 	#
-	cur = con.cusrsor()
+	cur = con.cursor()
 	
 	#
 	# Execute the insert command a number of times
@@ -36,13 +36,17 @@ try:
 	#
 	lid = cur.lastrowid
 	print "The last Id of the inserted row is %d" % lid
+	#
+	# committhe data to the database
+	#
+	con.commit()
 
-except lite.Error,e
+except lite.DatabaseError, e:
 	#
 	# the program only comes here if an error occurs
 	# display the error and quit
 	#
-	print “error %s:”,% e.args[0]
+	print "error %s:" % e.args[0]
 	sys.exit(1)
 
 finally:
@@ -53,3 +57,4 @@ finally:
 	#
 	if con:
 		con.close()
+
