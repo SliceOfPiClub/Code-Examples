@@ -15,7 +15,7 @@ try:
 	#
 	# create a connection to the database
 	#
-	con = lite.connect('TemperatureReaddings.db')
+	con = lite.connect('TemperatureReadings.db')
 
 	#
 	# create a cursor to all data to be fetched from the database
